@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "debug": "^2.6.0",
     "lodash": "^4.17.4"
   }
 }
