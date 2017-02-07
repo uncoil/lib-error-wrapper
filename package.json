@@ -1,4 +1,7 @@
 {
+  "name": "lib-error-wrapper",
+  "main": "index.js",
+  "author": "Jake Orr <jake.orr@strawhouse.com>",
   "dependencies": {
     "lodash": "^4.17.4"
   }
