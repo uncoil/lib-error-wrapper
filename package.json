@@ -1,9 +1,17 @@
 {
   "name": "lib-error-wrapper",
-  "main": "index.js",
+  "main": "lib/index.js",
   "version": "1.0.0",
   "author": "Jake Orr <jake.orr@strawhouse.com>",
+  "scripts": {
+    "compile": "babel --presets es2015 -d lib/ src/",
+    "prepublish": "npm run compile"
+  },
   "dependencies": {
     "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-preset-es2015": "^6.22.0"
   }
 }
