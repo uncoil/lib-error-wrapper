@@ -5,7 +5,7 @@
   "author": "Jake Orr <jake.orr@strawhouse.com>",
   "scripts": {
     "compile": "babel --presets es2015 -d lib/ src/",
-    "prepublish": "npm run compile"
+    "install": "npm run compile"
   },
   "dependencies": {
     "lodash": "^4.17.4",
