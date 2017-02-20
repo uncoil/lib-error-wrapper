@@ -5,10 +5,12 @@
   "author": "Jake Orr <jake.orr@strawhouse.com>",
   "scripts": {
     "compile": "babel --presets es2015 -d lib/ src/",
-    "install": "npm run compile"
+    "prepublish": "npm run compile"
   },
   "dependencies": {
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
     "babel-cli": "^6.23.0",
     "babel-preset-es2015": "^6.22.0"
   }
