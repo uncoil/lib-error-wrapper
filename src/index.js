@@ -18,24 +18,25 @@ function getErrorData(err) {
  */
 function wrapper(target, options = {}) {
   return (...args) => {
-    return target(...args)
-      .catch((err) => {
-        const { raw, fields = [] } = options;
+    return target(...args).catch(err => {
+      const { raw, fields = [] } = options;
 
-        // Exit case - do not transform
-        if (raw || !err.name || err.name !== 'StatusCodeError') throw err;
+      // Exit case - do not transform
+      if (raw || !err.name || err.name !== 'StatusCodeError') throw err;
 
-        // Transform error
-        const errorData = getErrorData(err);
-        const error = Error(errorData.message || err.message);
+      // Transform error
+      const errorData = getErrorData(err);
+      const error = Error(errorData.message || err.message);
 
-        error.error = errorData;
-        error.stack = err.stack;
-        [...defaultFields, ...fields].forEach(field => error[field] = get(err, field));
-
-        throw error;
+      error.error = errorData;
+      error.stack = err.stack;
+      [...defaultFields, ...fields].forEach(field => {
+        error[field] = get(err, field);
       });
-  }
+
+      throw error;
+    });
+  };
 }
 
 module.exports = wrapper;
