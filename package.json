@@ -2,8 +2,7 @@
   "name": "lib-error-wrapper",
   "main": "lib/index.js",
   "version": "1.0.2",
-  "description":
-    "A library to wrap other libraries that throw request-promise errors. Cleans up error output.",
+  "description": "A library to wrap other libraries that throw request-promise errors. Cleans up error output.",
   "author": "Jake Orr <jake.a.orr@gmail.com>",
   "repository": {
     "type": "git",
